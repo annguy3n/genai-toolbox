@@ -147,7 +147,26 @@ func TestBigtableToolEndpoints(t *testing.T) {
 		tests.WithMyToolById4Want(myToolById4Want),
 	)
 	tests.RunMCPToolCallMethod(t, mcpMyFailToolWant, mcpSelect1Want)
-	tests.InvokeMCPTool(t, "dummy-bigtable-list-tables", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-tables", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-instances", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-clusters", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-logical-views", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-get-table", map[string]any{"table_name": "bad"}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-get-instance", map[string]any{"instance_id": "bad"}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-get-cluster", map[string]any{"cluster_id": "bad"}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-get-logical-view", map[string]any{"logical_view_id": "bad"}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-create-table", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-delete-table", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-update-table", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-create-cluster", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-delete-cluster", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-update-cluster", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-create-instance", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-update-instance", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-delete-instance", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-create-logical-view", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-update-logical-view", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-delete-logical-view", map[string]any{}, map[string]string{})
 	tests.RunToolInvokeWithTemplateParameters(t, tableNameTemplateParam,
 		tests.WithNameFieldArray(nameFieldArray),
 		tests.WithNameColFilter(nameColFilter),
@@ -333,7 +352,7 @@ func addTemplateParamConfig(t *testing.T, config map[string]any) map[string]any 
 			parameters.NewStringParameter("columnFilter", "some description"),
 		},
 	}
-		toolsMap["dummy-bigtable-create-cluster"] = map[string]any{
+	toolsMap["dummy-bigtable-create-cluster"] = map[string]any{
 		"type":        "bigtable-create-cluster",
 		"source":      "my-instance",
 		"description": "Dummy tool for test coverage",

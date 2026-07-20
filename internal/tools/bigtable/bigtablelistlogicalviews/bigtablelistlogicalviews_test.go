@@ -15,6 +15,7 @@
 package bigtablelistlogicalviews_test
 
 import (
+	"context"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
@@ -104,7 +105,7 @@ func TestToolConfigType(t *testing.T) {
 
 func TestInitialize(t *testing.T) {
 	config := bigtablelistlogicalviews.Config{}
-	_, err := config.Initialize(nil)
+	_, err := config.Initialize(context.TODO())
 	if err != nil {
 		t.Errorf("Initialize() unexpected error: %v", err)
 	}
@@ -123,7 +124,7 @@ func (m mockSourceProvider) GetSource(sourceName string) (sources.Source, bool) 
 
 func TestInvoke(t *testing.T) {
 	tool := bigtablelistlogicalviews.Tool{}
-	_, err := tool.Invoke(nil, mockSourceProvider{}, nil, "")
+	_, err := tool.Invoke(context.TODO(), mockSourceProvider{}, nil, "")
 	if err == nil {
 		t.Errorf("Invoke() unexpected success")
 	}
