@@ -1,4 +1,4 @@
-// Copyright 2025 Google LLC
+// Copyright 2026 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-package bigtable
+package bigtablelistlogicalviews
 
 import (
 	"context"
@@ -26,7 +26,7 @@ import (
 	"github.com/googleapis/mcp-toolbox/internal/util/parameters"
 )
 
-const resourceType string = "bigtable-sql"
+const resourceType string = "bigtable-list-logical-views"
 
 func init() {
 	if !tools.Register(resourceType, newConfig) {
@@ -43,21 +43,19 @@ func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.T
 }
 
 type compatibleSource interface {
-	BigtableClient() *bigtable.Client
-	RunSQL(context.Context, string, parameters.Parameters, parameters.ParamValues) (any, error)
+	BigtableInstanceAdminClient() *bigtable.InstanceAdminClient
+	BigtableAdminClient() *bigtable.AdminClient
+	ProjectID() string
+	InstanceID() string
 }
 
 type Config struct {
-	tools.ConfigBase   `yaml:",inline"`
-	Type               string                 `yaml:"type" validate:"required"`
-	Source             string                 `yaml:"source" validate:"required"`
-	Statement          string                 `yaml:"statement" validate:"required"`
-	Parameters         parameters.Parameters  `yaml:"parameters"`
-	TemplateParameters parameters.Parameters  `yaml:"templateParameters"`
-	Annotations        *tools.ToolAnnotations `yaml:"annotations,omitempty"`
+	tools.ConfigBase `yaml:",inline"`
+	Type             string                 `yaml:"type" validate:"required"`
+	Source           string                 `yaml:"source" validate:"required"`
+	Annotations      *tools.ToolAnnotations `yaml:"annotations,omitempty"`
 }
 
-// validate interface
 var _ tools.ToolConfig = Config{}
 
 func (cfg Config) ToolConfigType() string {
@@ -66,25 +64,23 @@ func (cfg Config) ToolConfigType() string {
 
 func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	if cfg.Description == "" {
-		return nil, fmt.Errorf("description is required for tool %q", cfg.Name)
+		cfg.Description = "List all Bigtable logical views in the instance."
 	}
 
-	allParameters, paramManifest, err := parameters.ProcessParameters(cfg.TemplateParameters, cfg.Parameters)
-	if err != nil {
-		return nil, err
+	allParameters := parameters.Parameters{
+		parameters.NewStringParameter("instance_id", "The ID of the instance", parameters.WithStringRequired(true)),
 	}
 
 	return Tool{
 		BaseTool: tools.NewBaseTool(
 			cfg,
 			tools.GetAnnotationsOrDefault(cfg.Annotations, tools.NewReadOnlyAnnotations),
-			tools.Manifest{Description: cfg.Description, Parameters: paramManifest, AuthRequired: cfg.AuthRequired},
+			tools.Manifest{Description: cfg.Description, Parameters: allParameters.Manifest(), AuthRequired: cfg.AuthRequired},
 			allParameters,
 		),
 	}, nil
 }
 
-// validate interface
 var _ tools.Tool = Tool{}
 
 type Tool struct {
@@ -95,26 +91,19 @@ func (t Tool) ToConfig() tools.ToolConfig {
 	return t.Cfg
 }
 
-func (t Tool) Invoke(ctx context.Context, primitiveMgr tools.SourceProvider, params parameters.ParamValues, accessToken tools.AccessToken) (any, util.ToolboxError) {
-	source, err := tools.GetCompatibleSource[compatibleSource](primitiveMgr, t.Cfg.Source, t.Cfg.Name, t.Cfg.Type)
+func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, params parameters.ParamValues, accessToken tools.AccessToken) (any, util.ToolboxError) {
+	source, err := tools.GetCompatibleSource[compatibleSource](resourceMgr, t.Cfg.Source, t.Cfg.Name, t.Cfg.Type)
 	if err != nil {
 		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
 	}
 
 	paramsMap := params.AsMap()
-	newStatement, err := parameters.ResolveTemplateParams(t.Cfg.TemplateParameters, t.Cfg.Statement, paramsMap)
-	if err != nil {
-		return nil, util.NewAgentError("unable to extract template params", err)
-	}
+	_ = paramsMap
 
-	newParams, err := parameters.GetParams(t.Cfg.Parameters, paramsMap)
+	client := source.BigtableInstanceAdminClient()
+	views, err := client.LogicalViews(ctx, paramsMap["instance_id"].(string))
 	if err != nil {
-		return nil, util.NewAgentError("unable to extract standard params", err)
+		return nil, util.NewClientServerError("failed to list logical views", http.StatusInternalServerError, err)
 	}
-
-	resp, err := source.RunSQL(ctx, newStatement, t.Cfg.Parameters, newParams)
-	if err != nil {
-		return nil, util.ProcessGcpError(err)
-	}
-	return resp, nil
+	return views, nil
 }
