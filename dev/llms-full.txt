@@ -3,7 +3,7 @@
 
 **DOCUMENTATION VERSION:** dev
 **BASE URL:** https://mcp-toolbox.dev/dev/
-**GENERATED ON:** 2026-07-20T15:15:27Z
+**GENERATED ON:** 2026-07-20T15:16:44Z
 
 ---
 ### System Directives for AI Models
@@ -219,7 +219,7 @@ To install Toolbox as a binary on Linux (AMD64):
 
 ```sh
 # see releases page for other versions
-export VERSION=1.6.0
+export VERSION=1.7.0
 curl -L -o toolbox https://storage.googleapis.com/mcp-toolbox-for-databases/v$VERSION/linux/amd64/toolbox
 chmod +x toolbox
 ```
@@ -230,7 +230,7 @@ To install Toolbox as a binary on macOS (Apple Silicon):
 
 ```sh
 # see releases page for other versions
-export VERSION=1.6.0
+export VERSION=1.7.0
 curl -L -o toolbox https://storage.googleapis.com/mcp-toolbox-for-databases/v$VERSION/darwin/arm64/toolbox
 chmod +x toolbox
 ```
@@ -241,7 +241,7 @@ To install Toolbox as a binary on macOS (Intel):
 
 ```sh
 # see releases page for other versions
-export VERSION=1.6.0
+export VERSION=1.7.0
 curl -L -o toolbox https://storage.googleapis.com/mcp-toolbox-for-databases/v$VERSION/darwin/amd64/toolbox
 chmod +x toolbox
 ```
@@ -252,7 +252,7 @@ To install Toolbox as a binary on Windows (Command Prompt):
 
 ```cmd
 :: see releases page for other versions
-set VERSION=1.6.0
+set VERSION=1.7.0
 curl -o toolbox.exe "https://storage.googleapis.com/mcp-toolbox-for-databases/v%VERSION%/windows/amd64/toolbox.exe"
 ```
 
@@ -262,7 +262,7 @@ To install Toolbox as a binary on Windows (PowerShell):
 
 ```powershell
 # see releases page for other versions
-$VERSION = "1.6.0"
+$VERSION = "1.7.0"
 curl.exe -o toolbox.exe "https://storage.googleapis.com/mcp-toolbox-for-databases/v$VERSION/windows/amd64/toolbox.exe"
 ```
 
@@ -272,7 +272,7 @@ To install Toolbox as a binary on Windows ARM64 (Command Prompt):
 
 ```cmd
 :: see releases page for other versions
-set VERSION=1.6.0
+set VERSION=1.7.0
 curl -o toolbox.exe "https://storage.googleapis.com/mcp-toolbox-for-databases/v%VERSION%/windows/arm64/toolbox.exe"
 ```
 
@@ -282,7 +282,7 @@ To install Toolbox as a binary on Windows ARM64 (PowerShell):
 
 ```powershell
 # see releases page for other versions
-$VERSION = "1.6.0"
+$VERSION = "1.7.0"
 curl.exe -o toolbox.exe "https://storage.googleapis.com/mcp-toolbox-for-databases/v$VERSION/windows/arm64/toolbox.exe"
 ```
 
@@ -294,7 +294,7 @@ You can also install Toolbox as a container:
 
 ```sh
 # see releases page for other versions
-export VERSION=1.6.0
+export VERSION=1.7.0
 docker pull us-central1-docker.pkg.dev/database-toolbox/toolbox/toolbox:$VERSION
 ```
 
@@ -313,7 +313,7 @@ To install from source, ensure you have the latest version of
 [Go installed](https://go.dev/doc/install), and then run the following command:
 
 ```sh
-go install github.com/googleapis/mcp-toolbox@v1.6.0
+go install github.com/googleapis/mcp-toolbox@v1.7.0
 ```
 
 {{% /tab %}}
@@ -1106,7 +1106,7 @@ In this section, we will download Toolbox, configure our tools in a
     <!-- {x-release-please-start-version} -->
     ```bash
     export OS="linux/amd64" # one of linux/amd64, darwin/arm64, darwin/amd64, windows/amd64, or windows/arm64
-    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/$OS/toolbox
+    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/$OS/toolbox
     ```
     <!-- {x-release-please-end} -->
 
@@ -3598,9 +3598,13 @@ for performance and safety reasons.
 {{< notice tip >}}
 To minimize SQL injection risk when using template parameters, always provide
 the `allowedValues` field within the parameter to restrict inputs.
+
 Alternatively, for `string` type parameters, you can use the `escape` field to
-add delimiters to the identifier. For `integer` or `float` type parameters, you
-can use `minValue` and `maxValue` to define the allowable range.
+add delimiters to the identifier, though please note that escaping alone does
+not fully secure the parameter.
+
+For `integer` or `float` type parameters, you can use `minValue` and `maxValue`
+to define the allowable range.
 {{< /notice >}}
 
 ```yaml
@@ -10683,23 +10687,23 @@ After you install Looker in the MCP Store, resources and tools from the server a
 
 {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -11189,23 +11193,23 @@ expose your developer assistant tools to a MySQL instance:
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -11519,23 +11523,23 @@ expose your developer assistant tools to a Neo4j instance:
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -11846,23 +11850,23 @@ to expose your developer assistant tools to an Oracle instance:
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -12195,23 +12199,23 @@ Omni](https://cloud.google.com/alloydb/omni/docs/overview).
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -12552,23 +12556,23 @@ instance:
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -12882,23 +12886,23 @@ to expose your developer assistant tools to a SQLite instance:
    <!-- {x-release-please-start-version} -->
    {{< tabpane persist=header >}}
 {{< tab header="linux/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/linux/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/linux/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/arm64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/arm64/toolbox
 {{< /tab >}}
 
 {{< tab header="darwin/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/darwin/amd64/toolbox
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/darwin/amd64/toolbox
 {{< /tab >}}
 
 {{< tab header="windows/amd64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/amd64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/amd64/toolbox.exe
 {{< /tab >}}
 
 {{< tab header="windows/arm64" lang="bash" >}}
-curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/windows/arm64/toolbox.exe
+curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/windows/arm64/toolbox.exe
 {{< /tab >}}
 {{< /tabpane >}}
     <!-- {x-release-please-end} -->
@@ -16947,6 +16951,194 @@ Run the Toolbox server, pointing to the `tools.yaml` file created earlier:
         each database in the AlloyDB instance.
     *   `list_roles`: Lists all the user-created roles in PostgreSQL database.
     *   `list_stored_procedure`: Lists stored procedures.
+
+
+
+
+========================================================================
+## ArcadeDB
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > ArcadeDB
+**URL:** https://mcp-toolbox.dev/dev/integrations/arcadedb/
+**Description:** ArcadeDB is a multi-model database with Bolt protocol support.
+
+
+
+
+
+
+========================================================================
+## ArcadeDB Source
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > ArcadeDB > ArcadeDB Source
+**URL:** https://mcp-toolbox.dev/dev/integrations/arcadedb/source/
+**Description:** ArcadeDB is a multi-model database with Bolt protocol support.
+
+
+
+## About
+
+[ArcadeDB][arcadedb-docs] is a multi-model database that supports graph (Cypher),
+document (SQL), key-value, and time-series data in one engine. It exposes a
+Bolt protocol endpoint compatible with the Neo4j driver.
+
+[arcadedb-docs]: https://docs.arcadedb.com/
+
+## Available Tools
+
+{{< list-tools >}}
+
+## Requirements
+
+### Database User
+
+This source uses standard authentication. Create an ArcadeDB user (or use the
+`root` user) that can connect over Bolt.
+
+## Example
+
+```yaml
+kind: source
+name: my-arcadedb-source
+type: arcadedb
+uri: bolt://localhost:7687
+user: root
+password: ${PASSWORD}
+database: "mydb"
+```
+
+{{< notice tip >}}
+Use environment variable replacement with the format ${ENV_NAME}
+instead of hardcoding your secrets into the configuration file.
+{{< /notice >}}
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                                                      |
+|-------------|:--------:|:------------:|--------------------------------------------------------------------------------------|
+| type        |  string  |     true     | Must be "arcadedb".                                                                  |
+| uri         |  string  |     true     | Bolt URI (e.g. "bolt://localhost:7687").                                             |
+| user        |  string  |     true     | ArcadeDB user (e.g. "root").                                                         |
+| password    |  string  |     true     | Password for the ArcadeDB user.                                                      |
+| database    |  string  |     true     | Database name to connect to.                                                         |
+| httpUri     |  string  |    false     | Optional override for the ArcadeDB HTTP API base URL (e.g. "http://localhost:2480").  |
+| httpScheme  |  string  |    false     | Optional scheme override for the ArcadeDB HTTP API. Defaults to "http".               |
+| httpPort    | integer  |    false     | Optional port override for the ArcadeDB HTTP API. Defaults to 2480.                   |
+
+
+
+
+========================================================================
+## Tools
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > ArcadeDB > Tools
+**URL:** https://mcp-toolbox.dev/dev/integrations/arcadedb/tools/
+**Description:** None
+
+
+
+
+
+========================================================================
+## arcadedb-execute-cypher Tool
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > ArcadeDB > Tools > arcadedb-execute-cypher Tool
+**URL:** https://mcp-toolbox.dev/dev/integrations/arcadedb/tools/arcadedb-execute-cypher/
+**Description:** Execute Cypher queries against ArcadeDB via Bolt.
+
+
+
+## About
+
+`arcadedb-execute-cypher` executes an arbitrary Cypher query against an
+ArcadeDB source over the Bolt protocol. It supports a `readOnly` mode that
+rejects write statements and a `dry_run` mode that validates queries without
+executing them.
+
+> **Note:** This tool is intended for developer assistant workflows with
+> human-in-the-loop and shouldn't be used for production agents.
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Example
+
+```yaml
+kind: tool
+name: query_arcadedb
+type: arcadedb-execute-cypher
+source: my-arcadedb-source
+readOnly: true
+description: |
+  Execute Cypher against ArcadeDB in read-only mode.
+  Example:
+  {{
+      "cypher": "MATCH (n) RETURN count(n)"
+  }}
+```
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                                                                      |
+|-------------|:--------:|:------------:|------------------------------------------------------------------------------------------------------|
+| type        |  string  |     true     | Must be "arcadedb-execute-cypher".                                                                  |
+| source      |  string  |     true     | Name of the ArcadeDB source the Cypher query should execute on.                                      |
+| description |  string  |     true     | Description of the tool that is passed to the LLM.                                                   |
+| readOnly    | boolean  |    false     | If set to `true`, the tool will reject any write operations in the Cypher query. Default is `false`. |
+
+
+
+
+========================================================================
+## arcadedb-execute-sql Tool
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > ArcadeDB > Tools > arcadedb-execute-sql Tool
+**URL:** https://mcp-toolbox.dev/dev/integrations/arcadedb/tools/arcadedb-execute-sql/
+**Description:** Execute SQL queries against ArcadeDB.
+
+
+
+## About
+
+`arcadedb-execute-sql` executes an arbitrary ArcadeDB SQL statement against an
+ArcadeDB source. ArcadeDB supports SQL for document and multi-model queries,
+allowing you to query graphs and documents from the same database.
+
+> **Note:** This tool is intended for developer assistant workflows with
+> human-in-the-loop and shouldn't be used for production agents.
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Example
+
+```yaml
+kind: tool
+name: query_arcadedb_sql
+type: arcadedb-execute-sql
+source: my-arcadedb-source
+description: |
+  Execute SQL against ArcadeDB.
+  Example:
+  {{
+      "sql": "SELECT FROM Person WHERE name = :name LIMIT 5",
+      "params": {
+        "name": "Ada"
+      },
+      "dry_run": false
+  }}
+```
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                                                                |
+|-------------|:--------:|:------------:|------------------------------------------------------------------------------------------------|
+| type        |  string  |     true     | Must be "arcadedb-execute-sql".                                                                |
+| source      |  string  |     true     | Name of the ArcadeDB source the SQL should execute on.                                         |
+| description |  string  |     true     | Description of the tool that is passed to the LLM.                                             |
+| readOnly    | boolean  |    false     | If true, the statement is routed to a read-only endpoint, and ArcadeDB blocks write statements. |
 
 
 
@@ -31065,11 +31257,38 @@ This abbreviated syntax works for the qualified predicates except for `label` in
 ## Tool: create_data_product
 ### Request
 1. Use this tool to create a new Data Product.
-2. You must provide `locationId`. You can optionally provide `dataProductId` (if not specified, the backend will auto-generate one).
-3. You must provide `displayName` and `ownerEmails`.
-4. You can optionally provide `description` and `accessGroups`.
+2. You must provide `locationId`, `displayName`, and `ownerEmails`.
+3. You can optionally provide `dataProductId` (if not specified, the backend will auto-generate one), `description` and `accessGroups`.
 ### Response
-1. Present the location ID and operation ID returned immediately by the LRO creation call.
+1. Present the location ID and operation ID returned immediately by the tool call.
+2. Poll the returned operation using the `get_operation` tool until completion at intervals of ~5 seconds.
+
+## Tool: update_data_product
+### Request
+1. Use this tool to update an existing Data Product.
+2. You must provide `locationId` and `dataProductId`.
+3. You can optionally provide `displayName`, `description`, `ownerEmails`, `accessGroups`, and `updateMask`.
+### Response
+1. Present the location ID and operation ID returned immediately by the tool call.
+2. Poll the returned operation using the `get_operation` tool until completion at intervals of ~5 seconds.
+
+## Tool: create_data_asset
+### Request
+1. Use this tool to create a new Data Asset under a Data Product.
+2. You must provide `locationId`, `dataProductId`, `dataAssetId`, and `resourceUri`.
+3. You can optionally provide `labels` and `accessGroupConfigs`.
+### Response
+1. Present the location ID and operation ID returned immediately by the tool call.
+2. Poll the returned operation using the `get_operation` tool until completion at intervals of ~5 seconds.
+
+## Tool: update_data_asset
+### Request
+1. Use this tool to update an existing Data Asset under a Data Product.
+2. You must provide `locationId`, `dataProductId`, and `dataAssetId`.
+3. You can optionally provide `labels`, `accessGroupConfigs`, and `updateMask`.
+### Response
+1. Present the location ID and operation ID returned immediately by the tool call.
+2. Poll the returned operation using the `get_operation` tool until completion at intervals of ~5 seconds.
 ```
 
 
@@ -32470,6 +32689,85 @@ description: Use this tool to get all the entries based on the provided query.
 
 
 ========================================================================
+## dataplex-create-data-asset
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > Knowledge Catalog > Tools > dataplex-create-data-asset
+**URL:** https://mcp-toolbox.dev/dev/integrations/knowledge-catalog/tools/knowledge-catalog-create-data-asset/
+**Description:** A "dataplex-create-data-asset" tool creates a new Data Asset under an existing Data Product in Knowledge Catalog.
+
+
+
+## About
+
+A `dataplex-create-data-asset` tool creates a new Data Asset under a Data Product in Knowledge Catalog (formerly known as Dataplex). This is a long-running operation, and the tool returns immediately with the operation's location ID and operation ID.
+
+View the [Data Products guide][guide] for more information.
+
+[guide]: https://docs.cloud.google.com/dataplex/docs/data-products-overview
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Requirements
+
+### IAM Permissions
+
+Knowledge Catalog uses [Identity and Access Management (IAM)][iam-overview] to control
+user and group access to Knowledge Catalog resources. Toolbox will use your
+[Application Default Credentials (ADC)][adc] to authorize and authenticate when
+interacting with [Knowledge Catalog][dataplex-docs].
+
+In addition to [setting the ADC for your server][set-adc], you need to ensure
+the IAM identity has been given the correct IAM permissions for the tasks you
+intend to perform. See [Knowledge Catalog IAM permissions][iam-permissions]
+and [Knowledge Catalog IAM roles][iam-roles] for more information on
+applying IAM permissions and roles to an identity.
+
+[iam-overview]: https://cloud.google.com/dataplex/docs/iam-and-access-control
+[adc]: https://cloud.google.com/docs/authentication#adc
+[set-adc]: https://cloud.google.com/docs/authentication/provide-credentials-adc
+[iam-permissions]: https://cloud.google.com/dataplex/docs/iam-permissions
+[iam-roles]: https://cloud.google.com/dataplex/docs/iam-roles
+[dataplex-docs]: https://cloud.google.com/dataplex
+
+## Parameters
+
+The `dataplex-create-data-asset` tool accepts the following parameters:
+
+| **field**          | **type** | **required** | **description**                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------ | -------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| locationId         | string   | true         | The location ID (e.g. `us`, `us-central1`) where the parent Data Product is located.                                                                                                                                                                                                                                                                                        |
+| dataProductId      | string   | true         | The unique ID of the parent Data Product.                                                                                                                                                                                                                                                                                                                                   |
+| dataAssetId        | string   | true         | The unique ID of the Data Asset to create.                                                                                                                                                                                                                                                                                                                                  |
+| resourceUri        | string   | true         | The URI of the physical resource associated with the Data Asset (e.g. `//bigquery.googleapis.com/projects/my-project/datasets/my-dataset/tables/my-table`).                                                                                                                                                                                                                 |
+| labels             | map      | false        | The labels associated with the Data Asset. Keys and values must be strings.                                                                                                                                                                                                                                                                                                 |
+| accessGroupConfigs | map      | false        | Map of access group configurations to associate with the Data Asset. Keys represent the access group ID, and the value is a list of string IAM role names (e.g. `{"test-group": ["roles/bigquery.dataViewer"]}`). To find the list of supported roles that can be granted on the resource, refer to the [roles:queryGrantableRoles][query-grantable-roles-docs] API method. |
+
+[query-grantable-roles-docs]: https://cloud.google.com/iam/docs/reference/rest/v1/roles/queryGrantableRoles
+
+## Example
+
+```yaml
+kind: tool
+name: create_data_asset
+type: dataplex-create-data-asset
+source: my-dataplex-source
+description: Use this tool to create a Data Asset.
+```
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                    |
+| ----------- | -------- | ------------ | -------------------------------------------------- |
+| type        | string   | true         | Must be "dataplex-create-data-asset".              |
+| source      | string   | true         | Name of the source the tool should execute on.     |
+| description | string   | true         | Description of the tool that is passed to the LLM. |
+
+
+
+
+========================================================================
 ## dataplex-create-data-product
 ========================================================================
 **Hierarchy:** MCP Toolbox for Databases > Integrations > Knowledge Catalog > Tools > dataplex-create-data-product
@@ -32547,6 +32845,163 @@ description: Use this tool to create a Data Product.
 
 
 ========================================================================
+## dataplex-update-data-asset
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > Knowledge Catalog > Tools > dataplex-update-data-asset
+**URL:** https://mcp-toolbox.dev/dev/integrations/knowledge-catalog/tools/knowledge-catalog-update-data-asset/
+**Description:** A "dataplex-update-data-asset" tool updates an existing Data Asset under a Data Product in Knowledge Catalog.
+
+
+
+## About
+
+A `dataplex-update-data-asset` tool updates an existing Data Asset under a Data Product in Knowledge Catalog (formerly known as Dataplex). This is a long-running operation, and the tool returns immediately with the operation's location ID and operation ID.
+
+View the [Data Products guide][guide] for more information.
+
+[guide]: https://docs.cloud.google.com/dataplex/docs/data-products-overview
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Requirements
+
+### IAM Permissions
+
+Knowledge Catalog uses [Identity and Access Management (IAM)][iam-overview] to control
+user and group access to Knowledge Catalog resources. Toolbox will use your
+[Application Default Credentials (ADC)][adc] to authorize and authenticate when
+interacting with [Knowledge Catalog][dataplex-docs].
+
+In addition to [setting the ADC for your server][set-adc], you need to ensure
+the IAM identity has been given the correct IAM permissions for the tasks you
+intend to perform. See [Knowledge Catalog IAM permissions][iam-permissions]
+and [Knowledge Catalog IAM roles][iam-roles] for more information on
+applying IAM permissions and roles to an identity.
+
+[iam-overview]: https://cloud.google.com/dataplex/docs/iam-and-access-control
+[adc]: https://cloud.google.com/docs/authentication#adc
+[set-adc]: https://cloud.google.com/docs/authentication/provide-credentials-adc
+[iam-permissions]: https://cloud.google.com/dataplex/docs/iam-permissions
+[iam-roles]: https://cloud.google.com/dataplex/docs/iam-roles
+[dataplex-docs]: https://cloud.google.com/dataplex
+
+## Parameters
+
+The `dataplex-update-data-asset` tool accepts the following parameters:
+
+| **field**          | **type** | **required** | **description**                                                                                                                                                                                                                                                                                                                                                             |
+| ------------------ | -------- | ------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| locationId         | string   | true         | The location ID (e.g. `us`, `us-central1`) where the parent Data Product is located.                                                                                                                                                                                                                                                                                        |
+| dataProductId      | string   | true         | The unique ID of the parent Data Product.                                                                                                                                                                                                                                                                                                                                   |
+| dataAssetId        | string   | true         | The unique ID of the Data Asset to update.                                                                                                                                                                                                                                                                                                                                  |
+| labels             | map      | false        | The labels associated with the Data Asset. Keys and values must be strings.                                                                                                                                                                                                                                                                                                 |
+| accessGroupConfigs | map      | false        | Map of access group configurations to associate with the Data Asset. Keys represent the access group ID, and the value is a list of string IAM role names (e.g. `{"test-group": ["roles/bigquery.dataViewer"]}`). To find the list of supported roles that can be granted on the resource, refer to the [roles:queryGrantableRoles][query-grantable-roles-docs] API method. |
+| updateMask         | array    | false        | The list of fields to update. If not specified, all non-empty fields will be updated.                                                                                                                                                                                                                                                                                       |
+
+[query-grantable-roles-docs]: https://cloud.google.com/iam/docs/reference/rest/v1/roles/queryGrantableRoles
+
+## Example
+
+```yaml
+kind: tool
+name: update_data_asset
+type: dataplex-update-data-asset
+source: my-dataplex-source
+description: Use this tool to update a Data Asset.
+```
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                    |
+| ----------- | -------- | ------------ | -------------------------------------------------- |
+| type        | string   | true         | Must be "dataplex-update-data-asset".              |
+| source      | string   | true         | Name of the source the tool should execute on.     |
+| description | string   | true         | Description of the tool that is passed to the LLM. |
+
+
+
+
+========================================================================
+## dataplex-update-data-product
+========================================================================
+**Hierarchy:** MCP Toolbox for Databases > Integrations > Knowledge Catalog > Tools > dataplex-update-data-product
+**URL:** https://mcp-toolbox.dev/dev/integrations/knowledge-catalog/tools/knowledge-catalog-update-data-product/
+**Description:** A "dataplex-update-data-product" tool updates metadata for an existing Data Product in Knowledge Catalog.
+
+
+
+## About
+
+A `dataplex-update-data-product` tool updates an existing Data Product in Knowledge Catalog (formerly known as Dataplex). This is a long-running operation, and the tool returns immediately with the operation's location ID and operation ID.
+
+View the [Data Products guide][guide] for more information.
+
+[guide]: https://docs.cloud.google.com/dataplex/docs/data-products-overview
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Requirements
+
+### IAM Permissions
+
+Knowledge Catalog uses [Identity and Access Management (IAM)][iam-overview] to control
+user and group access to Knowledge Catalog resources. Toolbox will use your
+[Application Default Credentials (ADC)][adc] to authorize and authenticate when
+interacting with [Knowledge Catalog][dataplex-docs].
+
+In addition to [setting the ADC for your server][set-adc], you need to ensure
+the IAM identity has been given the correct IAM permissions for the tasks you
+intend to perform. See [Knowledge Catalog IAM permissions][iam-permissions]
+and [Knowledge Catalog IAM roles][iam-roles] for more information on
+applying IAM permissions and roles to an identity.
+
+[iam-overview]: https://cloud.google.com/dataplex/docs/iam-and-access-control
+[adc]: https://cloud.google.com/docs/authentication#adc
+[set-adc]: https://cloud.google.com/docs/authentication/provide-credentials-adc
+[iam-permissions]: https://cloud.google.com/dataplex/docs/iam-permissions
+[iam-roles]: https://cloud.google.com/dataplex/docs/iam-roles
+[dataplex-docs]: https://cloud.google.com/dataplex
+
+## Parameters
+
+The `dataplex-update-data-product` tool accepts the following parameters:
+
+| **field**     | **type**         | **required** | **description**                                                                                                                                                                                            |
+| ------------- | ---------------- | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| locationId    | string           | true         | The location ID (e.g. `us`, `us-central1`) of the Data Product.                                                                                                                                            |
+| dataProductId | string           | true         | The unique ID of the Data Product to update.                                                                                                                                                               |
+| displayName   | string           | false        | The display name of the Data Product.                                                                                                                                                                      |
+| description   | string           | false        | The description of the Data Product.                                                                                                                                                                       |
+| ownerEmails   | array of strings | false        | The list of owner emails for the Data Product.                                                                                                                                                             |
+| accessGroups  | array of objects | false        | List of access groups to associate with the Data Product. Each group object can contain: `id` (required), `displayName` (required), `description`, and at least one of `googleGroup` and `serviceAccount`. |
+| updateMask    | array of strings | false        | List of paths indicating which fields to update (e.g., `displayName`, `description`, `ownerEmails`, `accessGroups`). If not specified, all fields provided will be updated.                                |
+
+## Example
+
+```yaml
+kind: tool
+name: update_data_product
+type: dataplex-update-data-product
+source: my-dataplex-source
+description: Use this tool to update a Data Product.
+```
+
+## Reference
+
+| **field**   | **type** | **required** | **description**                                    |
+| ----------- | -------- | ------------ | -------------------------------------------------- |
+| type        | string   | true         | Must be "dataplex-update-data-product".            |
+| source      | string   | true         | Name of the source the tool should execute on.     |
+| description | string   | true         | Description of the tool that is passed to the LLM. |
+
+
+
+
+========================================================================
 ## Prebuilt Configs
 ========================================================================
 **Hierarchy:** MCP Toolbox for Databases > Integrations > Knowledge Catalog > Prebuilt Configs
@@ -32585,6 +33040,9 @@ description: Use this tool to create a Data Product.
     *   `list_data_assets`: Lists Data Assets under a Data Product.
     *   `get_data_asset`: Retrieves specific metadata regarding a Data Asset.
     *   `create_data_product`: Creates a new Data Product.
+    *   `update_data_product`: Updates an existing Data Product.
+    *   `create_data_asset`: Creates a new Data Asset under a Data Product.
+    *   `update_data_asset`: Updates an existing Data Asset under a Data Product.
     *   `generate_data_insights`: Creates a new Dataplex Data Documentation scan template and triggers the run.
     *   `get_data_insights`: Retrieves the final generated data insights for a completed scan.
     *   `generate_data_profile`: Creates a new Dataplex Data Profile scan template and triggers the run.
@@ -32597,7 +33055,7 @@ description: Use this tool to create a Data Product.
     *   `get_run_status`: Retrieves the execution status of the latest background job run.
 *   **Toolsets:**
     *   `discovery`: Metadata discovery and search toolset (`search_entries`, `lookup_entry`, `search_aspect_types`, `lookup_context`, `search_dq_scans`).
-    *   `data-products`: Data Products and Data Assets curation and management toolset (`search_entries`, `lookup_entry`, `search_aspect_types`, `lookup_context`, `list_data_products`, `get_data_product`, `list_data_assets`, `get_data_asset`, `create_data_product`).
+    *   `data-products`: Data Products and Data Assets curation and management toolset (`search_entries`, `lookup_entry`, `search_aspect_types`, `lookup_context`, `list_data_products`, `get_data_product`, `list_data_assets`, `get_data_asset`, `create_data_product`, `update_data_product`, `create_data_asset`, `update_data_asset`).
     *   `enrich`: Metadata enrichment pipeline orchestration and execution toolset (`search_entries`, `lookup_entry`, `lookup_context`, `generate_data_insights`, `get_data_insights`, `generate_data_profile`, `get_data_profile`, `discover_metadata`, `get_discovery_results`, `check_data_quality`, `get_data_quality_results`, `get_operation`, `get_run_status`).
 
 
@@ -36268,7 +36726,7 @@ In this section, we will download Toolbox and run the Toolbox server.
     <!-- {x-release-please-start-version} -->
     ```bash
     export OS="linux/amd64" # one of linux/amd64, darwin/arm64, darwin/amd64, windows/amd64, or windows/arm64
-    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/$OS/toolbox
+    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/$OS/toolbox
     ```
     <!-- {x-release-please-end} -->
 
@@ -36429,7 +36887,7 @@ In this section, we will download Toolbox and run the Toolbox server.
     <!-- {x-release-please-start-version} -->
     ```bash
     export OS="linux/amd64" # one of linux/amd64, darwin/arm64, darwin/amd64, windows/amd64, or windows/arm64
-    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/$OS/toolbox
+    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/$OS/toolbox
     ```
     <!-- {x-release-please-end} -->
 
@@ -36552,7 +37010,7 @@ In this section, we will download Toolbox and run the Toolbox server.
     <!-- {x-release-please-start-version} -->
     ```bash
     export OS="linux/amd64" # one of linux/amd64, darwin/arm64, darwin/amd64, windows/amd64, or windows/arm64
-    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.6.0/$OS/toolbox
+    curl -O https://storage.googleapis.com/mcp-toolbox-for-databases/v1.7.0/$OS/toolbox
     ```
     <!-- {x-release-please-end} -->
 
@@ -40322,6 +40780,7 @@ instead of hardcoding your secrets into the configuration file.
 | queryParams |  map[string]string |     false    | Raw query to be added to the db connection string.                     |
 | queryExecMode | string | false | pgx query execution mode. Valid values: `cache_statement` (default), `cache_describe`, `describe_exec`, `exec`, `simple_protocol`. Useful with connection poolers that don't support prepared statement caching. |
 | sqlCommenter | boolean | false | Overrides the global `--sql-commenter` flag for this source. When set, it takes priority; when omitted, the global flag applies. |
+| connectTimeout | integer | false | Maximum time in seconds to wait for a single connection attempt (minimum 1, e.g. 5). When omitted, no timeout is applied and connection behavior is unchanged. |
 
 
 
