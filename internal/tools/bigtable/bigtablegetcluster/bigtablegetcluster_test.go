@@ -19,6 +19,7 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/googleapis/mcp-toolbox/internal/server"
+	"github.com/googleapis/mcp-toolbox/internal/sources"
 	"github.com/googleapis/mcp-toolbox/internal/testutils"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	bigtablegetcluster "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablegetcluster"
@@ -91,5 +92,39 @@ func TestParseFromYaml(t *testing.T) {
 				t.Fatalf("incorrect parse: diff %v", diff)
 			}
 		})
+	}
+}
+
+func TestToolConfigType(t *testing.T) {
+	config := bigtablegetcluster.Config{}
+	if got := config.ToolConfigType(); got != "bigtable-get-cluster" {
+		t.Errorf("ToolConfigType() = %v, want bigtable-get-cluster", got)
+	}
+}
+
+func TestInitialize(t *testing.T) {
+	config := bigtablegetcluster.Config{}
+	_, err := config.Initialize(nil)
+	if err != nil {
+		t.Errorf("Initialize() unexpected error: %v", err)
+	}
+}
+
+func TestToConfig(t *testing.T) {
+	tool := bigtablegetcluster.Tool{}
+	_ = tool.ToConfig()
+}
+
+type mockSourceProvider struct{}
+
+func (m mockSourceProvider) GetSource(sourceName string) (sources.Source, bool) {
+	return nil, false
+}
+
+func TestInvoke(t *testing.T) {
+	tool := bigtablegetcluster.Tool{}
+	_, err := tool.Invoke(nil, mockSourceProvider{}, nil, "")
+	if err == nil {
+		t.Errorf("Invoke() unexpected success")
 	}
 }
