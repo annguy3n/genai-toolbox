@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"cloud.google.com/go/bigtable"
 	yaml "github.com/goccy/go-yaml"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	"github.com/googleapis/mcp-toolbox/internal/util"
@@ -43,10 +42,7 @@ func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.T
 }
 
 type compatibleSource interface {
-	BigtableInstanceAdminClient() *bigtable.InstanceAdminClient
-	BigtableAdminClient() *bigtable.AdminClient
-	ProjectID() string
-	InstanceID() string
+	UpdateInstance(context.Context, string, string) (any, error)
 }
 
 type Config struct {
@@ -68,8 +64,8 @@ func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	}
 
 	allParameters := parameters.Parameters{
-		parameters.NewStringParameter("instance_id", "The ID of the instance to update", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("display_name", "The new display name", parameters.WithStringRequired(true)),
+		parameters.NewStringParameter("instance_id", "The ID of the instance to update"),
+		parameters.NewStringParameter("display_name", "The new display name"),
 	}
 
 	return Tool{
@@ -101,14 +97,9 @@ func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, para
 	paramsMap := params.AsMap()
 	_ = paramsMap
 
-	client := source.BigtableInstanceAdminClient()
-	conf := &bigtable.InstanceWithClustersConfig{
-		InstanceID:  paramsMap["instance_id"].(string),
-		DisplayName: paramsMap["display_name"].(string),
-	}
-	err = client.UpdateInstanceWithClusters(ctx, conf)
+	res, err := source.UpdateInstance(ctx, paramsMap["instance_id"].(string), paramsMap["display_name"].(string))
 	if err != nil {
-		return nil, util.NewClientServerError("failed to update instance", http.StatusInternalServerError, err)
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
 	}
-	return map[string]string{"status": "instance updated successfully"}, nil
+	return res, nil
 }

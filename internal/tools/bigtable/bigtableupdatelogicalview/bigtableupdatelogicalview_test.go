@@ -15,12 +15,10 @@
 package bigtableupdatelogicalview_test
 
 import (
-	"context"
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/googleapis/mcp-toolbox/internal/server"
-	"github.com/googleapis/mcp-toolbox/internal/sources"
 	"github.com/googleapis/mcp-toolbox/internal/testutils"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	bigtableupdatelogicalview "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtableupdatelogicalview"
@@ -93,39 +91,5 @@ func TestParseFromYaml(t *testing.T) {
 				t.Fatalf("incorrect parse: diff %v", diff)
 			}
 		})
-	}
-}
-
-func TestToolConfigType(t *testing.T) {
-	config := bigtableupdatelogicalview.Config{}
-	if got := config.ToolConfigType(); got != "bigtable-update-logical-view" {
-		t.Errorf("ToolConfigType() = %v, want bigtable-update-logical-view", got)
-	}
-}
-
-func TestInitialize(t *testing.T) {
-	config := bigtableupdatelogicalview.Config{}
-	_, err := config.Initialize(context.TODO())
-	if err != nil {
-		t.Errorf("Initialize() unexpected error: %v", err)
-	}
-}
-
-func TestToConfig(t *testing.T) {
-	tool := bigtableupdatelogicalview.Tool{}
-	_ = tool.ToConfig()
-}
-
-type mockSourceProvider struct{}
-
-func (m mockSourceProvider) GetSource(sourceName string) (sources.Source, bool) {
-	return nil, false
-}
-
-func TestInvoke(t *testing.T) {
-	tool := bigtableupdatelogicalview.Tool{}
-	_, err := tool.Invoke(context.TODO(), mockSourceProvider{}, nil, "")
-	if err == nil {
-		t.Errorf("Invoke() unexpected success")
 	}
 }

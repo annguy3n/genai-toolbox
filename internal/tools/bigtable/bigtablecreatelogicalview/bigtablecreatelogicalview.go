@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"cloud.google.com/go/bigtable"
 	yaml "github.com/goccy/go-yaml"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	"github.com/googleapis/mcp-toolbox/internal/util"
@@ -43,10 +42,7 @@ func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.T
 }
 
 type compatibleSource interface {
-	BigtableInstanceAdminClient() *bigtable.InstanceAdminClient
-	BigtableAdminClient() *bigtable.AdminClient
-	ProjectID() string
-	InstanceID() string
+	CreateLogicalView(context.Context, string, string, string) (any, error)
 }
 
 type Config struct {
@@ -68,9 +64,9 @@ func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	}
 
 	allParameters := parameters.Parameters{
-		parameters.NewStringParameter("instance_id", "The ID of the instance", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("logical_view_id", "The ID of the logical view", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("query", "The logical view query", parameters.WithStringRequired(true)),
+		parameters.NewStringParameter("instance_id", "The ID of the instance"),
+		parameters.NewStringParameter("logical_view_id", "The ID of the logical view"),
+		parameters.NewStringParameter("query", "The logical view query"),
 	}
 
 	return Tool{
@@ -102,14 +98,9 @@ func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, para
 	paramsMap := params.AsMap()
 	_ = paramsMap
 
-	client := source.BigtableInstanceAdminClient()
-	conf := &bigtable.LogicalViewInfo{
-		LogicalViewID: paramsMap["logical_view_id"].(string),
-		Query:         paramsMap["query"].(string),
-	}
-	err = client.CreateLogicalView(ctx, paramsMap["instance_id"].(string), conf)
+	res, err := source.CreateLogicalView(ctx, paramsMap["instance_id"].(string), paramsMap["logical_view_id"].(string), paramsMap["query"].(string))
 	if err != nil {
-		return nil, util.NewClientServerError("failed to create logical view", http.StatusInternalServerError, err)
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
 	}
-	return map[string]string{"status": "logical view created successfully"}, nil
+	return res, nil
 }

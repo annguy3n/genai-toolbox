@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"cloud.google.com/go/bigtable"
 	yaml "github.com/goccy/go-yaml"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	"github.com/googleapis/mcp-toolbox/internal/util"
@@ -43,10 +42,7 @@ func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.T
 }
 
 type compatibleSource interface {
-	BigtableInstanceAdminClient() *bigtable.InstanceAdminClient
-	BigtableAdminClient() *bigtable.AdminClient
-	ProjectID() string
-	InstanceID() string
+	DeleteLogicalView(context.Context, string, string) (any, error)
 }
 
 type Config struct {
@@ -68,8 +64,8 @@ func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	}
 
 	allParameters := parameters.Parameters{
-		parameters.NewStringParameter("instance_id", "The ID of the instance", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("logical_view_id", "The ID of the logical view", parameters.WithStringRequired(true)),
+		parameters.NewStringParameter("instance_id", "The ID of the instance"),
+		parameters.NewStringParameter("logical_view_id", "The ID of the logical view"),
 	}
 
 	return Tool{
@@ -101,10 +97,9 @@ func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, para
 	paramsMap := params.AsMap()
 	_ = paramsMap
 
-	client := source.BigtableInstanceAdminClient()
-	err = client.DeleteLogicalView(ctx, paramsMap["instance_id"].(string), paramsMap["logical_view_id"].(string))
+	res, err := source.DeleteLogicalView(ctx, paramsMap["instance_id"].(string), paramsMap["logical_view_id"].(string))
 	if err != nil {
-		return nil, util.NewClientServerError("failed to delete logical view", http.StatusInternalServerError, err)
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
 	}
-	return map[string]string{"status": "logical view deleted successfully"}, nil
+	return res, nil
 }

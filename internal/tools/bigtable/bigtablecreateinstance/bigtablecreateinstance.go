@@ -19,7 +19,6 @@ import (
 	"fmt"
 	"net/http"
 
-	"cloud.google.com/go/bigtable"
 	yaml "github.com/goccy/go-yaml"
 	"github.com/googleapis/mcp-toolbox/internal/tools"
 	"github.com/googleapis/mcp-toolbox/internal/util"
@@ -43,10 +42,7 @@ func newConfig(ctx context.Context, name string, decoder *yaml.Decoder) (tools.T
 }
 
 type compatibleSource interface {
-	BigtableInstanceAdminClient() *bigtable.InstanceAdminClient
-	BigtableAdminClient() *bigtable.AdminClient
-	ProjectID() string
-	InstanceID() string
+	CreateInstance(context.Context, string, string, string, string, int32) (any, error)
 }
 
 type Config struct {
@@ -68,11 +64,11 @@ func (cfg Config) Initialize(context.Context) (tools.Tool, error) {
 	}
 
 	allParameters := parameters.Parameters{
-		parameters.NewStringParameter("instance_id", "The ID of the instance to create", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("display_name", "Display name for the instance", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("cluster_id", "The ID of the primary cluster", parameters.WithStringRequired(true)),
-		parameters.NewStringParameter("zone", "The zone for the cluster (e.g. us-central1-b)", parameters.WithStringRequired(true)),
-		parameters.NewIntParameter("num_nodes", "The number of nodes for the cluster", parameters.WithIntRequired(true)),
+		parameters.NewStringParameter("instance_id", "The ID of the instance to create"),
+		parameters.NewStringParameter("display_name", "Display name for the instance"),
+		parameters.NewStringParameter("cluster_id", "The ID of the primary cluster"),
+		parameters.NewStringParameter("zone", "The zone for the cluster (e.g. us-central1-b)"),
+		parameters.NewIntParameter("num_nodes", "The number of nodes for the cluster"),
 	}
 
 	return Tool{
@@ -104,17 +100,9 @@ func (t Tool) Invoke(ctx context.Context, resourceMgr tools.SourceProvider, para
 	paramsMap := params.AsMap()
 	_ = paramsMap
 
-	client := source.BigtableInstanceAdminClient()
-	conf := &bigtable.InstanceConf{
-		InstanceId:  paramsMap["instance_id"].(string),
-		DisplayName: paramsMap["display_name"].(string),
-		ClusterId:   paramsMap["cluster_id"].(string),
-		Zone:        paramsMap["zone"].(string),
-		NumNodes:    int32(paramsMap["num_nodes"].(int)),
-	}
-	err = client.CreateInstance(ctx, conf)
+	res, err := source.CreateInstance(ctx, paramsMap["instance_id"].(string), paramsMap["display_name"].(string), paramsMap["cluster_id"].(string), paramsMap["zone"].(string), int32(paramsMap["num_nodes"].(int)))
 	if err != nil {
-		return nil, util.NewClientServerError("failed to create instance", http.StatusInternalServerError, err)
+		return nil, util.NewClientServerError("source used is not compatible with the tool", http.StatusInternalServerError, err)
 	}
-	return map[string]string{"status": "instance created successfully"}, nil
+	return res, nil
 }
