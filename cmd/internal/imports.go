@@ -105,6 +105,7 @@ import (
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablelistclusters"
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablelistinstances"
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablelistlogicalviews"
+	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablelistschemas"
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtablelisttables"
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtableupdatecluster"
 	_ "github.com/googleapis/mcp-toolbox/internal/tools/bigtable/bigtableupdateinstance"

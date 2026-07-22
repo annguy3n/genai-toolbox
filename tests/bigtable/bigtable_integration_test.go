@@ -148,6 +148,7 @@ func TestBigtableToolEndpoints(t *testing.T) {
 	)
 	tests.RunMCPToolCallMethod(t, mcpMyFailToolWant, mcpSelect1Want)
 	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-tables", map[string]any{}, map[string]string{})
+	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-schemas", map[string]any{}, map[string]string{})
 	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-instances", map[string]any{}, map[string]string{})
 	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-clusters", map[string]any{}, map[string]string{})
 	_, _, _ = tests.InvokeMCPTool(t, "dummy-bigtable-list-logical-views", map[string]any{}, map[string]string{})
@@ -424,6 +425,11 @@ func addTemplateParamConfig(t *testing.T, config map[string]any) map[string]any 
 	}
 	toolsMap["dummy-bigtable-list-logical-views"] = map[string]any{
 		"type":        "bigtable-list-logical-views",
+		"source":      "my-instance",
+		"description": "Dummy tool for test coverage",
+	}
+	toolsMap["dummy-bigtable-list-schemas"] = map[string]any{
+		"type":        "bigtable-list-schemas",
 		"source":      "my-instance",
 		"description": "Dummy tool for test coverage",
 	}
