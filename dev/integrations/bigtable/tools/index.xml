@@ -13,4 +13,45 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
  &lt;path d="M150 128c82.813 0 150 67.188 150 150 0 82.813-67.188 150-150 150C67.187 428 0 360.812 0 278c0-82.813 67.188-150 150-150Zm25 243.555v-37.11c0-3.515-2.734-6.445-6.055-6.445h-37.5c-3.515 0-6.445 2.93-6.445 6.445v37.11c0 3.515 2.93 6.445 6.445 6.445h37.5c3.32 0 6.055-2.93 6.055-6.445Zm-.39-67.188 3.515-121.289c0-1.367-.586-2.734-1.953-3.516-1.172-.976-2.93-1.562-4.688-1.562h-42.968c-1.758 0-3.516.586-4.688 1.563-1.367.78-1.953 2.148-1.953 3.515l3.32 121.29c0 2.734 2.93 4.882 6.64 4.882h36.134c3.515 0 6.445-2.148 6.64-4.883Z"/&gt;
 &lt;/svg&gt;
 
- &lt;/span&gt;Note&lt;/p&gt;</description></item></channel></rss>
+ &lt;/span&gt;Note&lt;/p&gt;</description></item><item><title>bigtable-admin tools</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
+&lt;p&gt;The Bigtable Administrative MCP tools empower autonomous agents and workflows to natively manage the lifecycle of Bigtable topologies. Instead of being restricted solely to data-plane query tools (&lt;code&gt;bigtable-sql&lt;/code&gt;), agents can directly provision or inspect underlying infrastructure via the &lt;code&gt;cloud.google.com/go/bigtable&lt;/code&gt; Admin SDKs.&lt;/p&gt;
+&lt;h2 id="supported-operations"&gt;Supported Operations&lt;/h2&gt;
+&lt;p&gt;The following suite of tools are provided for complete structural manipulation:&lt;/p&gt;
+&lt;h3 id="instances"&gt;Instances&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-instance&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="clusters"&gt;Clusters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-list-clusters&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="tables"&gt;Tables&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-table&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="logical-views"&gt;Logical Views&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-list-logical-views&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
+
+
+
+
+
+&lt;div class="compatibility-section"&gt;
+ &lt;p&gt;This tool can be used with the following database sources:&lt;/p&gt;</description></item></channel></rss>

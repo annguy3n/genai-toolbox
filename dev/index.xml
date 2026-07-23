@@ -8434,7 +8434,7 @@ returned. Otherwise, the selection is not guaranteed.&lt;/p&gt;
 &lt;p&gt;The tool returns a single JSON object representing the document, wrapped in a
 JSON array.&lt;/p&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
-&lt;h2 id="hahahugoshortcode295s0hbhb"&gt;
+&lt;h2 id="hahahugoshortcode443s0hbhb"&gt;
 
 
 
@@ -15868,7 +15868,48 @@ human-in-the-loop and shouldn&amp;rsquo;t be used for production agents.&lt;/p&g
  &lt;a href="https://cloud.google.com/bigquery/docs/pre-built-tools-with-mcp-toolbox"&gt;click here to proceed&lt;/a&gt;.
  &lt;/p&gt;
  &lt;/body&gt;
-&lt;/html&gt;</description></item><item><title>clickhouse-sql</title><link>https://mcp-toolbox.dev/dev/integrations/clickhouse/tools/clickhouse-sql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/clickhouse/tools/clickhouse-sql/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
+&lt;/html&gt;</description></item><item><title>bigtable-admin tools</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
+&lt;p&gt;The Bigtable Administrative MCP tools empower autonomous agents and workflows to natively manage the lifecycle of Bigtable topologies. Instead of being restricted solely to data-plane query tools (&lt;code&gt;bigtable-sql&lt;/code&gt;), agents can directly provision or inspect underlying infrastructure via the &lt;code&gt;cloud.google.com/go/bigtable&lt;/code&gt; Admin SDKs.&lt;/p&gt;
+&lt;h2 id="supported-operations"&gt;Supported Operations&lt;/h2&gt;
+&lt;p&gt;The following suite of tools are provided for complete structural manipulation:&lt;/p&gt;
+&lt;h3 id="instances"&gt;Instances&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-instance&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-instance&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="clusters"&gt;Clusters&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-list-clusters&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-cluster&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="tables"&gt;Tables&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-table&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-table&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="logical-views"&gt;Logical Views&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;bigtable-get-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-list-logical-views&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-create-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-update-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;bigtable-delete-logical-view&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
+
+
+
+
+
+&lt;div class="compatibility-section"&gt;
+ &lt;p&gt;This tool can be used with the following database sources:&lt;/p&gt;</description></item><item><title>clickhouse-sql</title><link>https://mcp-toolbox.dev/dev/integrations/clickhouse/tools/clickhouse-sql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/clickhouse/tools/clickhouse-sql/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;A &lt;code&gt;clickhouse-sql&lt;/code&gt; tool executes SQL queries as prepared statements against a
 ClickHouse database.&lt;/p&gt;
 &lt;p&gt;This tool supports both template parameters (for SQL statement customization)
