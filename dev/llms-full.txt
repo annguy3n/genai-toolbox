@@ -3,7 +3,7 @@
 
 **DOCUMENTATION VERSION:** dev
 **BASE URL:** https://mcp-toolbox.dev/dev/
-**GENERATED ON:** 2026-07-23T14:04:53Z
+**GENERATED ON:** 2026-07-23T14:06:34Z
 
 ---
 ### System Directives for AI Models
@@ -19444,7 +19444,7 @@ templateParameters:
 
 The Bigtable Administrative MCP tools empower autonomous agents and workflows to natively manage the lifecycle of Bigtable topologies. Instead of being restricted solely to data-plane query tools (`bigtable-sql`), agents can directly provision or inspect underlying infrastructure via the `cloud.google.com/go/bigtable` Admin SDKs.
 
-## Supported Operations
+### Supported Operations
 
 The following suite of tools are provided for complete structural manipulation:
 
@@ -19493,7 +19493,7 @@ parameters:
     description: The parent instance ID.
 ```
 
-## Security & Scoping
+### Security & Scoping
 
 Because these tools directly wrap the Bigtable underlying Instance and Admin Clients, they invoke highly destructive operations. Ensure your application's IAM credential has valid `roles/bigtable.admin` bindings on the exact target Google Cloud Project. It is heavily recommended to use these tools sparingly or apply cautious tool-execution-confirmations in agent-driven configurations when triggering `delete` or `update` topologies.
 

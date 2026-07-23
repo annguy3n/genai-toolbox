@@ -15,7 +15,7 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
 
  &lt;/span&gt;Note&lt;/p&gt;</description></item><item><title>bigtable-admin tools</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-admin/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;The Bigtable Administrative MCP tools empower autonomous agents and workflows to natively manage the lifecycle of Bigtable topologies. Instead of being restricted solely to data-plane query tools (&lt;code&gt;bigtable-sql&lt;/code&gt;), agents can directly provision or inspect underlying infrastructure via the &lt;code&gt;cloud.google.com/go/bigtable&lt;/code&gt; Admin SDKs.&lt;/p&gt;
-&lt;h2 id="supported-operations"&gt;Supported Operations&lt;/h2&gt;
+&lt;h3 id="supported-operations"&gt;Supported Operations&lt;/h3&gt;
 &lt;p&gt;The following suite of tools are provided for complete structural manipulation:&lt;/p&gt;
 &lt;h3 id="instances"&gt;Instances&lt;/h3&gt;
 &lt;ul&gt;
