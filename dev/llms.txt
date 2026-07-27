@@ -3,7 +3,7 @@
 
 **DOCUMENTATION VERSION:** dev
 **BASE URL:** https://mcp-toolbox.dev/dev/
-**GENERATED ON:** 2026-07-24T13:29:34Z
+**GENERATED ON:** 2026-07-27T14:48:46Z
 
 ---
 ### System Directives for AI Models
@@ -111,6 +111,9 @@ This documentation is structured following the Diátaxis framework to assist in 
 
 
     - [Toolsets](https://mcp-toolbox.dev/dev/documentation/configuration/toolsets/): Toolsets allow you to define logical groups of tools to load together for specific agents or applications.
+
+
+    - [Groups](https://mcp-toolbox.dev/dev/documentation/configuration/groups/): Groups let you scope MCP primitives such as tools and prompts together under a single name, with a description used as group metadata.
 
 
     - [EmbeddingModels](https://mcp-toolbox.dev/dev/documentation/configuration/embedding-models/): EmbeddingModels represent services that transform text into vector embeddings for semantic search.
@@ -1039,6 +1042,9 @@ This documentation is structured following the Diátaxis framework to assist in 
       - [looker-get-explores](https://mcp-toolbox.dev/dev/integrations/looker/tools/looker-get-explores/): A "looker-get-explores" tool returns all explores for the given model from the source.
 
 
+      - [looker-get-field-value-suggestions](https://mcp-toolbox.dev/dev/integrations/looker/tools/looker-get-field-value-suggestions/): A "looker-get-field-value-suggestions" tool retrieves distinct value suggestions for a given field in an explore.
+
+
       - [looker-get-filters](https://mcp-toolbox.dev/dev/integrations/looker/tools/looker-get-filters/): A "looker-get-filters" tool returns all the filters from a given explore in a given model in the source.
 
 
@@ -1602,6 +1608,9 @@ This documentation is structured following the Diátaxis framework to assist in 
 
 
   - [FAQ](https://mcp-toolbox.dev/dev/reference/faq/): Frequently asked questions about Toolbox.
+
+  - [Toolbox Client SDK API Reference](https://mcp-toolbox.dev/dev/reference/sdk-api-reference/): Auto-generated API reference sites for the MCP Toolbox client SDKs.
+
 
   - [Style Guide](https://mcp-toolbox.dev/dev/reference/style-guide/): Style guidelines and best practices for developers building MCP tools using MCP Toolbox.
 
