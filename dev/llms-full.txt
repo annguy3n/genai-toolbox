@@ -3,7 +3,7 @@
 
 **DOCUMENTATION VERSION:** dev
 **BASE URL:** https://mcp-toolbox.dev/dev/
-**GENERATED ON:** 2026-07-28T14:19:31Z
+**GENERATED ON:** 2026-07-28T14:21:07Z
 
 ---
 ### System Directives for AI Models
@@ -19779,7 +19779,7 @@ templateParameters:
 **Description:** None
 
 
-# bigtable-create-cluster
+## About
 
 Create a new Bigtable cluster in an instance.
 
@@ -19793,7 +19793,7 @@ Create a new Bigtable cluster in an instance.
 | `num_nodes` | integer | The number of nodes to allocate | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19813,7 +19813,7 @@ tools:
 **Description:** None
 
 
-# bigtable-create-instance
+## About
 
 Create a new Bigtable instance.
 
@@ -19828,7 +19828,7 @@ Create a new Bigtable instance.
 | `num_nodes` | integer | The number of nodes for the cluster | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19848,7 +19848,7 @@ tools:
 **Description:** None
 
 
-# bigtable-create-logical-view
+## About
 
 Create a new Bigtable logical view.
 
@@ -19861,7 +19861,7 @@ Create a new Bigtable logical view.
 | `query` | string | The logical view query | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19881,7 +19881,7 @@ tools:
 **Description:** None
 
 
-# bigtable-create-table
+## About
 
 Create a new Bigtable table.
 
@@ -19892,7 +19892,7 @@ Create a new Bigtable table.
 | `table_id` | string | The ID of the table to create | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19912,7 +19912,7 @@ tools:
 **Description:** None
 
 
-# bigtable-delete-cluster
+## About
 
 Delete a Bigtable cluster.
 
@@ -19924,7 +19924,7 @@ Delete a Bigtable cluster.
 | `cluster_id` | string | The ID of the cluster | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19944,7 +19944,7 @@ tools:
 **Description:** None
 
 
-# bigtable-delete-instance
+## About
 
 Delete a Bigtable instance.
 
@@ -19955,7 +19955,7 @@ Delete a Bigtable instance.
 | `instance_id` | string | The ID of the instance to delete | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -19975,7 +19975,7 @@ tools:
 **Description:** None
 
 
-# bigtable-delete-logical-view
+## About
 
 Delete a Bigtable logical view.
 
@@ -19987,7 +19987,7 @@ Delete a Bigtable logical view.
 | `logical_view_id` | string | The ID of the logical view | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20007,7 +20007,7 @@ tools:
 **Description:** None
 
 
-# bigtable-delete-table
+## About
 
 Delete a Bigtable table.
 
@@ -20018,7 +20018,7 @@ Delete a Bigtable table.
 | `table_id` | string | The ID of the table to delete | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20038,7 +20038,7 @@ tools:
 **Description:** None
 
 
-# bigtable-get-cluster
+## About
 
 Get details of a Bigtable cluster.
 
@@ -20050,7 +20050,7 @@ Get details of a Bigtable cluster.
 | `cluster_id` | string | The ID of the cluster | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20070,7 +20070,7 @@ tools:
 **Description:** None
 
 
-# bigtable-get-instance
+## About
 
 Get details of a Bigtable instance.
 
@@ -20081,7 +20081,7 @@ Get details of a Bigtable instance.
 | `instance_id` | string | The ID of the instance to get | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20101,7 +20101,7 @@ tools:
 **Description:** None
 
 
-# bigtable-get-logical-view
+## About
 
 Get details of a Bigtable logical view.
 
@@ -20113,7 +20113,7 @@ Get details of a Bigtable logical view.
 | `logical_view_id` | string | The ID of the logical view | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20133,7 +20133,7 @@ tools:
 **Description:** None
 
 
-# bigtable-get-table
+## About
 
 Get details of a Bigtable table.
 
@@ -20144,7 +20144,7 @@ Get details of a Bigtable table.
 | `table_id` | string | The ID of the table to get | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20164,7 +20164,7 @@ tools:
 **Description:** None
 
 
-# bigtable-list-clusters
+## About
 
 List all Bigtable clusters in the instance.
 
@@ -20175,7 +20175,7 @@ List all Bigtable clusters in the instance.
 | `instance_id` | string | The ID of the instance | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20195,11 +20195,11 @@ tools:
 **Description:** None
 
 
-# bigtable-list-instances
+## About
 
 List all Bigtable instances in the project.
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20219,7 +20219,7 @@ tools:
 **Description:** None
 
 
-# bigtable-list-logical-views
+## About
 
 List all Bigtable logical views in the instance.
 
@@ -20230,7 +20230,7 @@ List all Bigtable logical views in the instance.
 | `instance_id` | string | The ID of the instance | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20250,11 +20250,11 @@ tools:
 **Description:** None
 
 
-# bigtable-list-tables
+## About
 
 List all Bigtable tables in the instance.
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20274,7 +20274,7 @@ tools:
 **Description:** None
 
 
-# bigtable-update-cluster
+## About
 
 Update the number of nodes in a Bigtable cluster.
 
@@ -20287,7 +20287,7 @@ Update the number of nodes in a Bigtable cluster.
 | `serve_nodes` | integer | The new number of nodes to allocate | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20307,7 +20307,7 @@ tools:
 **Description:** None
 
 
-# bigtable-update-instance
+## About
 
 Update an existing Bigtable instance.
 
@@ -20319,7 +20319,7 @@ Update an existing Bigtable instance.
 | `display_name` | string | The new display name | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20339,7 +20339,7 @@ tools:
 **Description:** None
 
 
-# bigtable-update-logical-view
+## About
 
 Update an existing Bigtable logical view.
 
@@ -20352,7 +20352,7 @@ Update an existing Bigtable logical view.
 | `query` | string | The new logical view query | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
@@ -20372,7 +20372,7 @@ tools:
 **Description:** None
 
 
-# bigtable-update-table
+## About
 
 Update an existing Bigtable table's configuration.
 
@@ -20384,7 +20384,7 @@ Update an existing Bigtable table's configuration.
 | `disable_change_stream` | boolean | Disable change stream | Yes |
 
 
-## Example Usage
+## Example
 
 ```yaml
 tools:
