@@ -3,7 +3,7 @@
 
 **DOCUMENTATION VERSION:** dev
 **BASE URL:** https://mcp-toolbox.dev/dev/
-**GENERATED ON:** 2026-07-29T19:54:54Z
+**GENERATED ON:** 2026-07-30T16:34:11Z
 
 ---
 ### System Directives for AI Models
@@ -19661,16 +19661,19 @@ instance: "test-instance"
 
 Create a new Bigtable cluster in an instance.
 
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Parameters
+
 `bigtable-create-cluster` accepts the following parameters:
 
 - **`instance_id`** (string): The ID of the instance
 - **`cluster_id`** (string): The ID of the cluster
 - **`zone`** (string): The zone for the cluster (e.g. us-central1-b)
 - **`num_nodes`** (integer): The number of nodes to allocate
-
-## Compatible Sources
-
-{{< compatible-sources >}}
 
 ## Example
 
@@ -19705,6 +19708,13 @@ description: Create a new Bigtable cluster in an instance.
 
 Create a new Bigtable instance.
 
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Parameters
+
 `bigtable-create-instance` accepts the following parameters:
 
 - **`instance_id`** (string): The ID of the instance to create
@@ -19712,10 +19722,6 @@ Create a new Bigtable instance.
 - **`cluster_id`** (string): The ID of the primary cluster
 - **`zone`** (string): The zone for the cluster (e.g. us-central1-b)
 - **`num_nodes`** (integer): The number of nodes for the cluster
-
-## Compatible Sources
-
-{{< compatible-sources >}}
 
 ## Example
 
@@ -19750,15 +19756,18 @@ description: Create a new Bigtable instance.
 
 Create a new Bigtable logical view.
 
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Parameters
+
 `bigtable-create-logical-view` accepts the following parameters:
 
 - **`instance_id`** (string): The ID of the instance
 - **`logical_view_id`** (string): The ID of the logical view
 - **`query`** (string): The logical view query
-
-## Compatible Sources
-
-{{< compatible-sources >}}
 
 ## Example
 
@@ -19793,13 +19802,16 @@ description: Create a new Bigtable logical view.
 
 Create a new Bigtable table.
 
-`bigtable-create-table` accepts the following parameters:
-
-- **`table_id`** (string): The ID of the table to create
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-create-table` accepts the following parameters:
+
+- **`table_id`** (string): The ID of the table to create
 
 ## Example
 
@@ -19834,14 +19846,17 @@ description: Create a new Bigtable table.
 
 Delete a Bigtable cluster.
 
-`bigtable-delete-cluster` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
-- **`cluster_id`** (string): The ID of the cluster
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-delete-cluster` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
+- **`cluster_id`** (string): The ID of the cluster
 
 ## Example
 
@@ -19876,13 +19891,16 @@ description: Delete a Bigtable cluster.
 
 Delete a Bigtable instance.
 
-`bigtable-delete-instance` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance to delete
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-delete-instance` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance to delete
 
 ## Example
 
@@ -19917,14 +19935,17 @@ description: Delete a Bigtable instance.
 
 Delete a Bigtable logical view.
 
-`bigtable-delete-logical-view` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
-- **`logical_view_id`** (string): The ID of the logical view
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-delete-logical-view` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
+- **`logical_view_id`** (string): The ID of the logical view
 
 ## Example
 
@@ -19959,13 +19980,16 @@ description: Delete a Bigtable logical view.
 
 Delete a Bigtable table.
 
-`bigtable-delete-table` accepts the following parameters:
-
-- **`table_id`** (string): The ID of the table to delete
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-delete-table` accepts the following parameters:
+
+- **`table_id`** (string): The ID of the table to delete
 
 ## Example
 
@@ -20000,14 +20024,17 @@ description: Delete a Bigtable table.
 
 Get details of a Bigtable cluster.
 
-`bigtable-get-cluster` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
-- **`cluster_id`** (string): The ID of the cluster
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-get-cluster` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
+- **`cluster_id`** (string): The ID of the cluster
 
 ## Example
 
@@ -20042,13 +20069,16 @@ description: Get details of a Bigtable cluster.
 
 Get details of a Bigtable instance.
 
-`bigtable-get-instance` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance to get
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-get-instance` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance to get
 
 ## Example
 
@@ -20083,14 +20113,17 @@ description: Get details of a Bigtable instance.
 
 Get details of a Bigtable logical view.
 
-`bigtable-get-logical-view` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
-- **`logical_view_id`** (string): The ID of the logical view
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-get-logical-view` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
+- **`logical_view_id`** (string): The ID of the logical view
 
 ## Example
 
@@ -20125,13 +20158,16 @@ description: Get details of a Bigtable logical view.
 
 Get details of a Bigtable table.
 
-`bigtable-get-table` accepts the following parameters:
-
-- **`table_id`** (string): The ID of the table to get
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-get-table` accepts the following parameters:
+
+- **`table_id`** (string): The ID of the table to get
 
 ## Example
 
@@ -20166,13 +20202,16 @@ description: Get details of a Bigtable table.
 
 List all Bigtable clusters in the instance.
 
-`bigtable-list-clusters` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-list-clusters` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
 
 ## Example
 
@@ -20244,13 +20283,16 @@ description: List all Bigtable instances in the project.
 
 List all Bigtable logical views in the instance.
 
-`bigtable-list-logical-views` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-list-logical-views` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance
 
 ## Example
 
@@ -20452,15 +20494,18 @@ templateParameters:
 
 Update the number of nodes in a Bigtable cluster.
 
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Parameters
+
 `bigtable-update-cluster` accepts the following parameters:
 
 - **`instance_id`** (string): The ID of the instance
 - **`cluster_id`** (string): The ID of the cluster
 - **`serve_nodes`** (integer): The new number of nodes to allocate
-
-## Compatible Sources
-
-{{< compatible-sources >}}
 
 ## Example
 
@@ -20495,14 +20540,17 @@ description: Update the number of nodes in a Bigtable cluster.
 
 Update an existing Bigtable instance.
 
-`bigtable-update-instance` accepts the following parameters:
-
-- **`instance_id`** (string): The ID of the instance to update
-- **`display_name`** (string): The new display name
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-update-instance` accepts the following parameters:
+
+- **`instance_id`** (string): The ID of the instance to update
+- **`display_name`** (string): The new display name
 
 ## Example
 
@@ -20537,15 +20585,18 @@ description: Update an existing Bigtable instance.
 
 Update an existing Bigtable logical view.
 
+
+## Compatible Sources
+
+{{< compatible-sources >}}
+
+## Parameters
+
 `bigtable-update-logical-view` accepts the following parameters:
 
 - **`instance_id`** (string): The ID of the instance
 - **`logical_view_id`** (string): The ID of the logical view
 - **`query`** (string): The new logical view query
-
-## Compatible Sources
-
-{{< compatible-sources >}}
 
 ## Example
 
@@ -20580,14 +20631,17 @@ description: Update an existing Bigtable logical view.
 
 Update an existing Bigtable table's configuration.
 
-`bigtable-update-table` accepts the following parameters:
-
-- **`table_id`** (string): The ID of the table to update
-- **`disable_change_stream`** (boolean): Disable change stream
 
 ## Compatible Sources
 
 {{< compatible-sources >}}
+
+## Parameters
+
+`bigtable-update-table` accepts the following parameters:
+
+- **`table_id`** (string): The ID of the table to update
+- **`disable_change_stream`** (boolean): Disable change stream
 
 ## Example
 

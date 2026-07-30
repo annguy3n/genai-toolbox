@@ -805,13 +805,6 @@ within that session.&lt;/li&gt;
 &lt;div class="compatibility-section"&gt;
  &lt;p&gt;This tool can be used with the following database sources:&lt;/p&gt;</description></item><item><title>bigtable-create-cluster</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-cluster/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Create a new Bigtable cluster in an instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-create-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;zone&lt;/code&gt;&lt;/strong&gt; (string): The zone for the cluster (e.g. us-central1-b)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;num_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The number of nodes to allocate&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -843,6 +836,14 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-create-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;zone&lt;/code&gt;&lt;/strong&gt; (string): The zone for the cluster (e.g. us-central1-b)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;num_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The number of nodes to allocate&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_create_cluster&lt;/span&gt;&lt;span class="w"&gt;
@@ -881,14 +882,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-create-instance</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-instance/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Create a new Bigtable instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-create-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to create&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;display_name&lt;/code&gt;&lt;/strong&gt; (string): Display name for the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the primary cluster&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;zone&lt;/code&gt;&lt;/strong&gt; (string): The zone for the cluster (e.g. us-central1-b)&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;num_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The number of nodes for the cluster&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -920,6 +913,15 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-create-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to create&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;display_name&lt;/code&gt;&lt;/strong&gt; (string): Display name for the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the primary cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;zone&lt;/code&gt;&lt;/strong&gt; (string): The zone for the cluster (e.g. us-central1-b)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;num_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The number of nodes for the cluster&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_create_instance&lt;/span&gt;&lt;span class="w"&gt;
@@ -958,12 +960,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-create-logical-view</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-logical-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-logical-view/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Create a new Bigtable logical view.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-create-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;query&lt;/code&gt;&lt;/strong&gt; (string): The logical view query&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -995,6 +991,13 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-create-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;query&lt;/code&gt;&lt;/strong&gt; (string): The logical view query&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_create_logical_view&lt;/span&gt;&lt;span class="w"&gt;
@@ -1033,10 +1036,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-create-table</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-table/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-create-table/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Create a new Bigtable table.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-create-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to create&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1068,6 +1067,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-create-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to create&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_create_table&lt;/span&gt;&lt;span class="w"&gt;
@@ -1106,11 +1110,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-delete-cluster</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-cluster/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Delete a Bigtable cluster.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-delete-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1142,6 +1141,12 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-delete-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_delete_cluster&lt;/span&gt;&lt;span class="w"&gt;
@@ -1180,10 +1185,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-delete-instance</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-instance/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Delete a Bigtable instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-delete-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to delete&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1215,6 +1216,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-delete-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to delete&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_delete_instance&lt;/span&gt;&lt;span class="w"&gt;
@@ -1253,11 +1259,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-delete-logical-view</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-logical-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-logical-view/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Delete a Bigtable logical view.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-delete-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1289,6 +1290,12 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-delete-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_delete_logical_view&lt;/span&gt;&lt;span class="w"&gt;
@@ -1327,10 +1334,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-delete-table</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-table/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-delete-table/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Delete a Bigtable table.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-delete-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to delete&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1362,6 +1365,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-delete-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to delete&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_delete_table&lt;/span&gt;&lt;span class="w"&gt;
@@ -1400,11 +1408,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-get-cluster</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-cluster/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Get details of a Bigtable cluster.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-get-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1436,6 +1439,12 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-get-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_get_cluster&lt;/span&gt;&lt;span class="w"&gt;
@@ -1474,10 +1483,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-get-instance</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-instance/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Get details of a Bigtable instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-get-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to get&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1509,6 +1514,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-get-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to get&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_get_instance&lt;/span&gt;&lt;span class="w"&gt;
@@ -1547,11 +1557,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-get-logical-view</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-logical-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-logical-view/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Get details of a Bigtable logical view.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-get-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1583,6 +1588,12 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-get-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_get_logical_view&lt;/span&gt;&lt;span class="w"&gt;
@@ -1621,10 +1632,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-get-table</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-table/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-get-table/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Get details of a Bigtable table.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-get-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to get&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1656,6 +1663,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-get-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to get&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_get_table&lt;/span&gt;&lt;span class="w"&gt;
@@ -1694,10 +1706,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-list-clusters</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-list-clusters/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-list-clusters/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;List all Bigtable clusters in the instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-list-clusters&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1729,6 +1737,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-list-clusters&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_list_clusters&lt;/span&gt;&lt;span class="w"&gt;
@@ -1836,10 +1849,6 @@ within that session.&lt;/li&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-list-logical-views</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-list-logical-views/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-list-logical-views/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;List all Bigtable logical views in the instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-list-logical-views&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -1871,6 +1880,11 @@ within that session.&lt;/li&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-list-logical-views&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_list_logical_views&lt;/span&gt;&lt;span class="w"&gt;
@@ -1993,12 +2007,6 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
 
  &lt;/span&gt;Note&lt;/p&gt;</description></item><item><title>bigtable-update-cluster</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-cluster/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-cluster/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Update the number of nodes in a Bigtable cluster.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-update-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;serve_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The new number of nodes to allocate&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -2030,6 +2038,13 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-update-cluster&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;cluster_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the cluster&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;serve_nodes&lt;/code&gt;&lt;/strong&gt; (integer): The new number of nodes to allocate&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_update_cluster&lt;/span&gt;&lt;span class="w"&gt;
@@ -2068,11 +2083,6 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-update-instance</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-instance/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-instance/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Update an existing Bigtable instance.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-update-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to update&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;display_name&lt;/code&gt;&lt;/strong&gt; (string): The new display name&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -2104,6 +2114,12 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-update-instance&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance to update&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;display_name&lt;/code&gt;&lt;/strong&gt; (string): The new display name&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_update_instance&lt;/span&gt;&lt;span class="w"&gt;
@@ -2142,12 +2158,6 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-update-logical-view</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-logical-view/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-logical-view/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Update an existing Bigtable logical view.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-update-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;query&lt;/code&gt;&lt;/strong&gt; (string): The new logical view query&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -2179,6 +2189,13 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-update-logical-view&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;instance_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the instance&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;logical_view_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the logical view&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;query&lt;/code&gt;&lt;/strong&gt; (string): The new logical view query&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_update_logical_view&lt;/span&gt;&lt;span class="w"&gt;
@@ -2217,11 +2234,6 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
 	&lt;/tbody&gt;
 &lt;/table&gt;</description></item><item><title>bigtable-update-table</title><link>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-table/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mcp-toolbox.dev/dev/integrations/bigtable/tools/bigtable-update-table/</guid><description>&lt;h2 id="about"&gt;About&lt;/h2&gt;
 &lt;p&gt;Update an existing Bigtable table&amp;rsquo;s configuration.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;bigtable-update-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to update&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;code&gt;disable_change_stream&lt;/code&gt;&lt;/strong&gt; (boolean): Disable change stream&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
 
 
@@ -2253,6 +2265,12 @@ inserted according to their name: e.g. &lt;code&gt;@name&lt;/code&gt;.&lt;/p&gt;
  &lt;/table&gt;
 &lt;/div&gt;
 
+&lt;h2 id="parameters"&gt;Parameters&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;bigtable-update-table&lt;/code&gt; accepts the following parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;table_id&lt;/code&gt;&lt;/strong&gt; (string): The ID of the table to update&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&lt;code&gt;disable_change_stream&lt;/code&gt;&lt;/strong&gt; (boolean): Disable change stream&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id="example"&gt;Example&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-yaml" data-lang="yaml"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;kind&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;tool&lt;/span&gt;&lt;span class="w"&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nt"&gt;name&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="l"&gt;bigtable_update_table&lt;/span&gt;&lt;span class="w"&gt;
@@ -10180,7 +10198,7 @@ returned. Otherwise, the selection is not guaranteed.&lt;/p&gt;
 &lt;p&gt;The tool returns a single JSON object representing the document, wrapped in a
 JSON array.&lt;/p&gt;
 &lt;h2 id="compatible-sources"&gt;Compatible Sources&lt;/h2&gt;
-&lt;h2 id="hahahugoshortcode365s0hbhb"&gt;
+&lt;h2 id="hahahugoshortcode398s0hbhb"&gt;
 
 
 
